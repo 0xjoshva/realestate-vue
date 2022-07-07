@@ -2,8 +2,10 @@
   <div class="card">
     <div class="box">
       <figure>
-        <router-link :to="{ name:'PropertyDetails', params:{id: property.id} }">
-        <img v-bind:src="property.imageURL" alt="" class="house-image" />
+        <router-link
+          :to="{ name: 'PropertyDetails', params: { id: property.id } }"
+        >
+          <img v-bind:src="property.imageURL" alt="" class="house-image" />
         </router-link>
         <figcaption>
           $<span>{{ property.price }}</span
