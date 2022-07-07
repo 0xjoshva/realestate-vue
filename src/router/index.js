@@ -1,37 +1,47 @@
+import PropertyDetails from '@/views/PropertyDetails.vue'
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 
 const routes = [
   {
-    path: '/',
-    name: 'home',
-    component: HomeView
+    path: "/",
+    name: "home",
+    component: HomeView,
   },
   {
-    path: '/property',
-    name: 'property',
+    path: "/property",
+    name: "property",
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/PropertyView.vue')
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../views/PropertyView.vue"),
   },
   {
-    path: '/contact',
-    name: 'contact',
+    path: "/contact",
+    name: "contact",
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/ContactView.vue')
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../views/ContactView.vue"),
   },
   {
-    path: '/admin',
-    name: 'admin',
+    path: "/admin",
+    name: "admin",
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AdminView.vue')
-  }
-]
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../views/AdminView.vue"),
+  },
+  {
+    path: "/property/:id",
+    name: "PropertyDetails",
+    component: PropertyDetails,
+    props: true
+  },
+];
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
