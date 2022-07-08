@@ -89,8 +89,7 @@ export default {
 }
 .image-containe{
     display: flex;
-    justify-content: center;
-}
+    justify-content: center;}
 .address-details{
     font-family: "Roboto", sans-serif;
     font-size: 15px;
